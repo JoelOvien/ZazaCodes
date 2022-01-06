@@ -1,0 +1,115 @@
+/**
+ * ********
+ * ONSCROLL ANIMATIONS
+ * ***********
+ * *********
+ *
+ * @format
+ */
+
+/*Globals*/
+
+.scroller {
+ transition: 0.3s 0.3s;
+ opacity: 0;
+}
+
+/********************/
+
+.fade-up {
+ opacity: 0;
+ transform: translateY(40px);
+}
+
+.fade-up.active {
+ animation-name: fade-up;
+ animation-duration: 1s;
+ animation-fill-mode: forwards;
+ animation-delay: 0.2s;
+}
+
+@keyframes fade-up {
+ 0% {
+ }
+
+ 100% {
+  opacity: 1;
+  transform: translateY(0px);
+ }
+}
+
+/**********************/
+
+.fade-down {
+ opacity: 0;
+ transform: translateY(-40px);
+}
+
+.fade-down.active {
+ animation-name: fade-down;
+ animation-duration: 1s;
+ animation-fill-mode: forwards;
+ animation-delay: 0.2s;
+}
+
+@keyframes fade-down {
+ 0% {
+ }
+
+ 100% {
+  opacity: 1;
+  transform: translateY(0px);
+ }
+}
+
+/*************/
+
+/**********************/
+
+
+/**********************/
+
+.fade-in {
+ opacity: 0;
+}
+
+.fade-in.active {
+ animation-name: fade-in;
+ animation-duration: 1s;
+ animation-fill-mode: forwards;
+ animation-delay: 0.2s;
+}
+
+@keyframes fade-in {
+ 0% {
+ }
+
+ 100% {
+  opacity: 1;
+ }
+}
+
+/*****************/
+
+/***********
+**************
+*****'****/
+
+
+@keyframes slide-2 {
+ 0% {
+ }
+
+ 100% {
+  transform: translate(20px, 75px);
+ }
+}
+
+@keyframes fade {
+ 0% {
+ }
+
+ 100% {
+  opacity: 1;
+ }
+}
