@@ -140,6 +140,13 @@ a.fab:hover {
  */
 .body-content-loaded {
   opacity: 0;
+  /* font-size: small; */
+  /* height: 40%; */
+  /* width: 50%; */
+  
+  /* height: 60;
+  width: 2400; */
+  /* size: 40px; */
 }
 
 .loading-swipe {
