@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# ZazaCodes — Personal Portfolio
 
-## Project info
+Modern portfolio site for Joel Ovienloba, a senior mobile engineer. The site highlights experience, skills, featured mobile projects, and contact details with a fast, accessible UI.
 
-**URL**: https://lovable.dev/projects/0a43df32-23a7-4b36-8deb-0f76ad4ede1f
+## Features
 
-## How can I edit this code?
+- Hero section with resume download and social links
+- About, Skills, Projects, and Contact sections
+- Featured mobile apps with tech stack tags
+- Responsive layout and smooth in-page navigation
+- Toast notifications for the contact form
 
-There are several ways of editing your application.
+## Tech stack
 
-**Use Lovable**
+- Vite + React + TypeScript
+- Tailwind CSS + shadcn/ui
+- Radix UI primitives
+- Lucide icons
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0a43df32-23a7-4b36-8deb-0f76ad4ede1f) and start prompting.
+## Getting started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Install
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Run locally
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+### Preview production build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+npm run preview
+```
 
-## What technologies are used for this project?
+## Project structure
 
-This project is built with:
+- [src/pages/Index.tsx](src/pages/Index.tsx) — page composition
+- [src/components/ui](src/components/ui) — sections and UI primitives
+- [src/assets](src/assets) — images and icons
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+Build with `npm run build` and deploy the `dist/` folder to any static hosting provider (Netlify, Vercel, Cloudflare Pages, GitHub Pages).
 
-Simply open [Lovable](https://lovable.dev/projects/0a43df32-23a7-4b36-8deb-0f76ad4ede1f) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT
