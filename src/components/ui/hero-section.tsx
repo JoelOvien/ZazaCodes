@@ -18,7 +18,7 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-background/1" />
       </div>
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="flex justify-center items-center min-h-[80vh]">
           {/* Content */}
           <div className="max-w-2xl space-y-8 animate-slide-up flex flex-col items-center text-center">
