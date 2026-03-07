@@ -1,66 +1,65 @@
-import { Badge } from "@/components/ui/badge";
+const highlights = [
+  "Senior Mobile Engineer at Pay4Me Inc, leading mobile team and architecting Flutter applications",
+  "Led end-to-end development lifecycle from planning to App Store/Play Store releases",
+  "Expert in Flutter, Dart, Swift, SwiftUI with focus on performance optimization and clean code",
+  "Built CI/CD pipelines (GitHub Actions) and reduced crash rates by 40% across multiple projects",
+  "Mentored 10+ developers and conducted code reviews to maintain high engineering standards",
+];
 
-const AboutSection = () => {
+const AboutSection = () => (
+  <section id="about" className="py-20 bg-[var(--ds-surface)]">
+    <div className="container mx-auto px-6">
+      <div className="max-w-6xl mx-auto">
 
-  const highlights = [
-    "Senior Mobile Engineer at Pay4Me Inc, leading mobile team and architecting Flutter applications",
-    "Led end-to-end development lifecycle from planning to App Store/Play Store releases",
-    "Expert in Flutter, Dart, Swift, SwiftUI with focus on performance optimization and clean code",
-    "Built CI/CD pipelines (GitHub Actions) and reduced crash rates by 40% across multiple projects",
-    "Mentored 10+ developers and conducted code reviews to maintain high engineering standards"
-  ];
+        {/* Header */}
+        <div className="mb-16">
+          <span className="font-mono-ds text-[10px] uppercase tracking-widest text-[var(--ds-text-dim)] block mb-4">
+            // About Me
+          </span>
+          <h2 className="font-body font-bold text-4xl md:text-5xl text-[var(--ds-text)]">
+            Passionate Mobile Engineer
+          </h2>
+        </div>
 
-  return (
-    <section id="about" className="py-20 bg-muted/20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">
-              About Me
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Passionate Mobile Engineer
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              With over 4 years of experience in mobile development, I specialize in creating 
-              high-performance, scalable mobile applications with expertise in Flutter, iOS, and 
-              Android development.
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Left — prose */}
+          <div className="space-y-6">
+            <h3 className="font-body font-semibold text-2xl text-[var(--ds-text)]">
+              Building the Future of Mobile
+            </h3>
+            <p className="font-body text-[var(--ds-text-mid)] leading-relaxed">
+              I'm a Senior Mobile Engineer with 4+ years of experience in creating high-performant
+              mobile applications. My journey started with native mobile development and has evolved
+              to encompass Flutter, cross-platform solutions, and full-stack mobile development.
+            </p>
+            <p className="font-body text-[var(--ds-text-mid)] leading-relaxed">
+              Currently leading mobile development at Radius Inc. (fka. Pay4Me App), I focus on building secure
+              cross-border transaction features, mentoring developers, and maintaining high
+              engineering standards through comprehensive code reviews and CI/CD practices.
             </p>
           </div>
 
-
-            {/* Content */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold mb-4">
-                Building the Future of Mobile
-              </h3>
-              
-              <p className="text-muted-foreground leading-relaxed">
-                I'm a Senior Mobile Engineer with 4+ years of experience in creating high-performant 
-                mobile applications. My journey started with native mobile development and has evolved 
-                to encompass Flutter, cross-platform solutions, and full-stack mobile development.
-              </p>
-
-              <div className="space-y-3">
-                {highlights.map((highlight, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <p className="text-muted-foreground">{highlight}</p>
-                  </div>
-                ))}
+          {/* Right — highlights */}
+          <div className="space-y-px">
+            {highlights.map((highlight, index) => (
+              <div
+                key={index}
+                className="group relative flex items-start gap-4 p-4 bg-[var(--ds-bg)] border-l-2 border-[var(--ds-border)] hover:border-[var(--ds-accent)] transition-colors duration-300"
+              >
+                <span className="font-mono-ds text-[10px] text-[var(--ds-text-dim)] shrink-0 mt-0.5">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="font-body text-sm text-[var(--ds-text-mid)] group-hover:text-[var(--ds-text)] transition-colors duration-300 leading-relaxed">
+                  {highlight}
+                </p>
               </div>
-
-              <p className="text-muted-foreground leading-relaxed">
-                Currently leading mobile development at Pay4Me Inc, I focus on building secure 
-                cross-border transaction features, mentoring developers, and maintaining high 
-                engineering standards through comprehensive code reviews and CI/CD practices.
-              </p>
-            </div>
+            ))}
           </div>
+        </div>
+
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default AboutSection;
