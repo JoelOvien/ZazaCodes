@@ -1,20 +1,23 @@
-import Navigation from "@/components/ui/navigation";
-import HeroSection from "@/components/ui/hero-section";
 import AboutSection from "@/components/ui/about-section";
-import SkillsSection from "@/components/ui/skills-section";
-import ProjectsSection from "@/components/ui/projects-section";
+import CompaniesSection from "@/components/ui/companies-section";
 import ContactSection from "@/components/ui/contact-section";
+import EngineeringImpactSection from "@/components/ui/engineering-impact-section";
+import EngineeringPhilosophySection from "@/components/ui/engineering-philosophy-section";
 import Footer from "@/components/ui/footer";
+import HeroSection from "@/components/ui/hero-section";
+import Navigation from "@/components/ui/navigation";
+import ProjectsSection from "@/components/ui/projects-section";
+import SkillsSection from "@/components/ui/skills-section";
 
 const tickerItems = [
   "Google #WeArePlay",
-  "Pay4Me / Radius — Principal Engineer",
-  "Flutter Clean Architecture",
-  "Bells University — B.Tech CS",
-  "Riverpod",
-  "CI/CD",
-  "KYC",
-  "30+ Devs Mentored",
+  "Techstars Chicago '22",
+  "NASDAQ MarketSite Featured",
+  "100K+ Users Globally",
+  "Over $9M+ in Transactions",
+  "OSCAFest 2025 Speaker",
+  "10+ Devs Mentored",
+  "Pay4Me / Radius — Mobile Team Lead",
 ];
 
 const RecognitionStrip = () => (
@@ -45,8 +48,11 @@ const Index = () => {
         <HeroSection />
         <RecognitionStrip />
         <AboutSection />
+        <CompaniesSection />
+        <EngineeringImpactSection />
         <SkillsSection />
         <ProjectsSection />
+        <EngineeringPhilosophySection />
         <ContactSection />
       </main>
       <Footer />

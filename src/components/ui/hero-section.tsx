@@ -3,26 +3,32 @@ import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 const stats = [
   {
     index: "01",
-    value: "6+",
-    label: "Years in software",
-    sub: "4+ focused on Flutter & mobile",
+    value: "100K+",
+    label: "Users served",
+    sub: "Via the Pay4Me mobile app across 12 countries",
   },
   {
     index: "02",
-    value: "10+",
-    label: "Devs mentored",
-    sub: "Turning juniors into confident engineers",
+    value: "$9M+",
+    label: "Transactions processed",
+    sub: "In cross-border payments via the Pay4Me app",
   },
   {
     index: "03",
+    value: "10+",
+    label: "Devs mentored",
+    sub: "GDSC Lead & Flutter curriculum designer",
+  },
+  {
+    index: "04",
     value: "★ G",
     label: "Google recognised",
-    sub: "#WeArePlay program featured developer",
+    sub: "#WeArePlay campaign — featured on Google Play",
   },
 ];
 
 const StatCard = ({ stat, wide }: { stat: typeof stats[0]; wide?: boolean }) => (
-  <div className={`group relative p-5 border border-[var(--ds-border)] bg-[var(--ds-surface)] overflow-hidden transition-colors duration-300 hover:bg-[#161616]${wide ? " col-span-2" : ""}`}>
+  <div className={`group relative p-5 border border-[var(--ds-border)] bg-[var(--ds-surface)] overflow-hidden transition-colors duration-300 hover:bg-[var(--ds-bg)]${wide ? " col-span-2" : ""}`}>
     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[var(--ds-accent)] scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300" />
     <span className="font-mono-ds text-[10px] text-[var(--ds-text-dim)] tracking-widest block mb-3">
       {stat.index}
@@ -69,12 +75,17 @@ const HeroSection = () => {
 
             {/* Mono subtitle */}
             <p className="font-mono-ds text-sm text-[var(--ds-text-mid)] tracking-wide">
-              Flutter · iOS · Android · Cross-platform
+              Flutter · Android · iOS · Cross-platform
             </p>
 
             {/* Bio */}
             <p className="font-body text-[var(--ds-text-mid)] leading-relaxed max-w-md text-base">
-              I architect cross-platform mobile experiences that move money across borders from blank canvas to thousands of global users. I obsess over clean architecture, pixel-sharp UI, and code that the next engineer will actually enjoy reading. Currently leading mobile at Radius Inc. (fka. Pay4Me App), making international payments feel effortless for students worldwide.
+              I build high-performance mobile applications serving 100,000+ users globally. I specialize in scalable architecture and product-driven engineering for fintech and cross-platform products. At Radius (fka. Pay4Me), the app I built from the ground up has processed over $9M in cross-border transactions.
+            </p>
+
+            {/* Credibility line */}
+            <p className="font-mono-ds text-xs text-[var(--ds-accent)] tracking-wide">
+              Mobile Team Lead at Radius Inc. (fka. Pay4Me) · Techstars Chicago '22 · Google #WeArePlay
             </p>
 
             {/* CTAs */}

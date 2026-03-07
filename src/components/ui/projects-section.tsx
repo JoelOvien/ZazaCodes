@@ -3,9 +3,18 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     index: "01",
-    title: "Pay4Me App",
-    description: "Cross-border payment application built with Flutter, featuring secure transactions, KYC verification, and document uploads. Led the mobile team through the complete development lifecycle.",
-    tech: ["Flutter", "Dart", "Firebase", "GitHub Actions"],
+    title: "Radius (fka. Pay4Me App)",
+    description:
+      "Techstars-backed fintech platform enabling cross-border tuition and payments for international students and immigrants. 100,000+ users globally, over $9M in transactions processed, payments to 229 institutions across 12 countries.",
+    contributions: [
+      "Built the production Flutter app from the ground up as sole mobile engineer, now serving 100K+ users",
+      "Led 4-person mobile team; architected modular features (wallets, transfers, virtual accounts, USD virtual cards, Pay a Business)",
+      "Built Fast KYC system enabling identity verification in under 5 minutes",
+      "Implemented CI/CD with GitHub Actions & Fastlane; integrated Firebase Analytics, Mixpanel, AppsFlyer with centralized analytics manager",
+      "Key technical contributor during Techstars Chicago '22 accelerator; helped ship v2.0",
+    ],
+    tech: ["Flutter", "Dart", "Firebase", "GitHub Actions", "Fastlane", "Remote Config"],
+    impact: "100K+ downloads, 4.6-star rating on Play Store, 4.5 on App Store, over $9M in transactions processed, featured in Google #WeArePlay and on NASDAQ MarketSite",
     links: {
       playStore: "https://play.google.com/store/apps/details?id=app.pay4me.app",
       appStore: "https://apps.apple.com/ng/app/pay4me-app/id1627285676?see-all=reviews",
@@ -13,36 +22,41 @@ const projects = [
   },
   {
     index: "02",
-    title: "TravelTube Mobile",
-    description: "Social travel platform connecting foodies and travelers worldwide. Features real-time chat, location services, and social interactions.",
-    tech: ["Flutter", "Dart", "Pusher", "Sentry"],
+    title: "PT Chat",
+    description:
+      "Cross-platform educational app helping parents support children's learning through personalized micro-learning activities and AI chat support.",
+    contributions: [
+      "Architected Flutter application using Clean Architecture with feature-first organization",
+      "Developed RESTful API integration with Repository-DataSource pattern and Either monad error handling",
+      "Built secure session management with encrypted storage and automatic expiration",
+      "Delivered localization and runtime language switching using Flutter's l10n/intl",
+    ],
+    tech: ["Flutter", "Dart", "BLoC", "OneSignal", "Clean Architecture"],
+    impact: "Shipped accessibility features including Text-to-Speech and multi-language support",
+    links: {},
+  },
+  {
+    index: "03",
+    title: "TravelTube",
+    description:
+      "Social travel platform connecting foodies and travelers worldwide with lifestyle news, tourism content, and a food ordering and delivery system.",
+    contributions: [
+      "Led development of three interconnected mobile applications (TravelTube, Tcourier, Partner Central)",
+      "Integrated Sentry for real-time error tracking and Pusher for instant notifications",
+      "Improved application modularity and decreased crash rates by 40%",
+      "Delivered localization and runtime language switching for global user base",
+    ],
+    tech: ["Flutter", "Dart", "Pusher", "Sentry", "Maps Integration"],
+    impact: "Reduced crash rates by 40% across the application suite",
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tclubmobile",
       appStore: "https://apps.apple.com/us/app/traveltube/id1580895770",
     },
   },
-  {
-    index: "03",
-    title: "Tcourier Delivery App",
-    description: "On-demand delivery service connecting drivers with restaurants and customers, with real-time order tracking and management.",
-    tech: ["Flutter", "Dart", "Real-time APIs", "Maps Integration"],
-    links: {
-      playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tcourier",
-    },
-  },
-  {
-    index: "04",
-    title: "Partner Central App",
-    description: "Restaurant management application for order processing, inventory management, and analytics — built to streamline restaurant operations.",
-    tech: ["Flutter", "Dart", "Firebase", "Analytics"],
-    links: {
-      playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tcourierorders",
-    },
-  },
 ];
 
 const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
-  <div className="group relative flex flex-col p-6 border border-[var(--ds-border)] bg-[var(--ds-bg)] overflow-hidden transition-colors duration-300 hover:bg-[var(--ds-surface)] h-full">
+  <div className="group relative flex flex-col p-8 border border-[var(--ds-border)] bg-[var(--ds-bg)] overflow-hidden transition-colors duration-300 hover:bg-[var(--ds-surface)]">
     {/* Accent stripe */}
     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[var(--ds-accent)] scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300" />
 
@@ -57,9 +71,34 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
     </div>
 
     {/* Description */}
-    <p className="font-body text-sm text-[var(--ds-text-mid)] leading-relaxed mb-6 flex-1">
+    <p className="font-body text-sm text-[var(--ds-text-mid)] leading-relaxed mb-5">
       {project.description}
     </p>
+
+    {/* Key contributions */}
+    <div className="mb-5">
+      <span className="font-mono-ds text-[10px] uppercase tracking-widest text-[var(--ds-text-dim)] block mb-3">
+        Key Contributions
+      </span>
+      <ul className="space-y-2">
+        {project.contributions.map((c, i) => (
+          <li key={i} className="font-body text-xs text-[var(--ds-text-mid)] leading-relaxed flex items-start gap-2">
+            <span className="text-[var(--ds-accent)] mt-0.5 shrink-0">-</span>
+            {c}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Impact */}
+    <div className="mb-5 p-3 border-l-2 border-[var(--ds-accent)] bg-[var(--ds-surface)]">
+      <span className="font-mono-ds text-[10px] uppercase tracking-widest text-[var(--ds-accent)] block mb-1">
+        Impact
+      </span>
+      <p className="font-body text-xs text-[var(--ds-text)] leading-relaxed">
+        {project.impact}
+      </p>
+    </div>
 
     {/* Tech tags */}
     <div className="flex flex-wrap gap-2 mb-6">
@@ -74,7 +113,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
     </div>
 
     {/* Links */}
-    <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap gap-4 mt-auto">
       {project.links.playStore && (
         <a
           href={project.links.playStore}
@@ -100,7 +139,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
 );
 
 const ProjectsSection = () => (
-  <section id="projects" className="py-20 bg-[var(--ds-surface)]">
+  <section id="projects" className="py-24 bg-[var(--ds-surface)]">
     <div className="container mx-auto px-6">
       <div className="max-w-6xl mx-auto">
 
@@ -110,12 +149,12 @@ const ProjectsSection = () => (
             // Featured Projects
           </span>
           <h2 className="font-body font-bold text-4xl md:text-5xl text-[var(--ds-text)]">
-            Apps That Make a Difference
+            Production Apps I've Built & Led
           </h2>
         </div>
 
-        {/* Project grid — 2 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--ds-border)]">
+        {/* Project grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-[var(--ds-border)]">
           {projects.map((project) => (
             <ProjectCard key={project.index} project={project} />
           ))}

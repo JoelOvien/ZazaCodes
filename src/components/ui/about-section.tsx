@@ -1,13 +1,13 @@
 const highlights = [
-  "Senior Mobile Engineer at Pay4Me Inc, leading mobile team and architecting Flutter applications",
-  "Led end-to-end development lifecycle from planning to App Store/Play Store releases",
-  "Expert in Flutter, Dart, Swift, SwiftUI with focus on performance optimization and clean code",
-  "Built CI/CD pipelines (GitHub Actions) and reduced crash rates by 40% across multiple projects",
-  "Mentored 10+ developers and conducted code reviews to maintain high engineering standards",
+  "Built the Pay4Me mobile app from the ground up — now serving 100,000+ users across 12 countries, processing over $9M in transactions",
+  "Promoted from Mobile Engineer to Senior Mobile Engineer & Mobile Team Lead within months of joining",
+  "Key technical contributor during Techstars Chicago '22 accelerator powered by J.P. Morgan",
+  "App featured in Google's #WeArePlay campaign and on NASDAQ's MarketSite tower in Times Square",
+  "Speaker at OSCAFest 2025 — Africa's largest open-source tech festival — on scalable AI-powered Flutter architecture",
 ];
 
 const AboutSection = () => (
-  <section id="about" className="py-20 bg-[var(--ds-surface)]">
+  <section id="about" className="py-24 bg-[var(--ds-surface)]">
     <div className="container mx-auto px-6">
       <div className="max-w-6xl mx-auto">
 
@@ -17,7 +17,7 @@ const AboutSection = () => (
             // About Me
           </span>
           <h2 className="font-body font-bold text-4xl md:text-5xl text-[var(--ds-text)]">
-            Passionate Mobile Engineer
+            Senior Mobile Engineer
           </h2>
         </div>
 
@@ -25,17 +25,13 @@ const AboutSection = () => (
           {/* Left — prose */}
           <div className="space-y-6">
             <h3 className="font-body font-semibold text-2xl text-[var(--ds-text)]">
-              Building the Future of Mobile
+              Shipping Production Mobile Apps at Scale
             </h3>
             <p className="font-body text-[var(--ds-text-mid)] leading-relaxed">
-              I'm a Senior Mobile Engineer with 4+ years of experience in creating high-performant
-              mobile applications. My journey started with native mobile development and has evolved
-              to encompass Flutter, cross-platform solutions, and full-stack mobile development.
+              Joel Ovienloba is a senior mobile engineer with 6+ years of software development experience, including 5+ years specializing in Flutter and mobile development for iOS and Android. He leads mobile at Radius (fka. Pay4Me), a Techstars-backed fintech where the app he built from the ground up now serves 100,000+ users globally and has processed over $9M in cross-border transactions.
             </p>
             <p className="font-body text-[var(--ds-text-mid)] leading-relaxed">
-              Currently leading mobile development at Radius Inc. (fka. Pay4Me App), I focus on building secure
-              cross-border transaction features, mentoring developers, and maintaining high
-              engineering standards through comprehensive code reviews and CI/CD practices.
+              He focuses on scalable architecture, performance optimization, and building mobile products that users rely on every day. Beyond Pay4Me, he has shipped production apps across education (PT Chat) and travel (TravelTube), and actively gives back through mentoring 10+ developers and speaking at conferences like OSCAFest.
             </p>
           </div>
 
