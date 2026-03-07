@@ -71,12 +71,15 @@ const Footer = () => {
               © {currentYear} Joel Ovienloba
             </span>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[var(--ds-accent)] animate-pulse" />
-                <span className="font-mono-ds text-[10px] uppercase tracking-widest text-[var(--ds-accent)]">
+              <button
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                className="flex items-center gap-2 cursor-pointer"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="font-mono-ds text-[10px] uppercase tracking-widest text-[var(--ds-accent)] hover:brightness-110 transition-all duration-200">
                   Available for hire
                 </span>
-              </div>
+              </button>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="p-2 border border-[var(--ds-border)] text-[var(--ds-text-dim)] hover:border-[var(--ds-accent)] hover:text-[var(--ds-text)] transition-colors duration-200"
