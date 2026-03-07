@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +51,7 @@ const Navigation = () => {
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className="text-sm text-muted-foreground hover:text-primary transition-smooth px-3 py-1 rounded-full hover:bg-accent"
+            className="font-mono-ds text-[11px] uppercase tracking-widest text-[var(--ds-text-dim)] hover:text-[var(--ds-text)] transition-smooth px-3 py-1"
           >
             {item.label}
           </button>
@@ -57,12 +59,21 @@ const Navigation = () => {
 
         <div className="w-px h-4 bg-border mx-1" />
 
-        <Button
-          size="sm"
-          className="hover:shadow-glow transition-smooth rounded-full text-sm h-8"
+        <button
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          className="p-1.5 text-muted-foreground hover:text-foreground transition-smooth"
+          aria-label="Toggle theme"
+        >
+          {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+        </button>
+
+        <a
+          href="mailto:jovienloba1@gmail.com"
+          className="font-mono-ds text-[11px] uppercase tracking-widest px-4 py-1.5 bg-[var(--ds-accent)] text-[var(--ds-bg)] hover:brightness-90 transition-all duration-200"
+          style={{ clipPath: "polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))" }}
         >
           Hire Me
-        </Button>
+        </a>
       </div>
 
       {/* Mobile bar */}
@@ -78,14 +89,25 @@ const Navigation = () => {
           <img src="/initials-512x512.png" alt="JO" className="h-7 w-7" />
         </button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          className="rounded-full"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </Button>
+        <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="rounded-full"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="rounded-full"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile dropdown */}
@@ -96,18 +118,19 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-muted-foreground hover:text-primary transition-smooth px-4 py-2 text-left rounded-xl hover:bg-accent"
+                className="font-mono-ds text-[11px] uppercase tracking-widest text-[var(--ds-text-dim)] hover:text-[var(--ds-text)] transition-smooth px-4 py-2 text-left"
               >
                 {item.label}
               </button>
             ))}
             <div className="px-4 pt-2">
-              <Button
-                size="sm"
-                className="w-full hover:shadow-glow transition-smooth rounded-full"
+              <a
+                href="mailto:jovienloba1@gmail.com"
+                className="font-mono-ds text-[11px] uppercase tracking-widest px-4 py-2 bg-[var(--ds-accent)] text-[var(--ds-bg)] hover:brightness-90 transition-all duration-200 block text-center"
+                style={{ clipPath: "polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))" }}
               >
                 Hire Me
-              </Button>
+              </a>
             </div>
           </div>
         </div>

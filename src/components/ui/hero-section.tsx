@@ -1,115 +1,127 @@
-import heroImage from "@/assets/hero-mobile-dev.jpg";
-import profileImage from "@/assets/joel-profile.jpg";
-import { Button } from "@/components/ui/button";
-import { ArrowDown, ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+
+const stats = [
+  {
+    index: "01",
+    value: "6+",
+    label: "Years in software",
+    sub: "4+ focused on Flutter & mobile",
+  },
+  {
+    index: "02",
+    value: "10+",
+    label: "Devs mentored",
+    sub: "Turning juniors into confident engineers",
+  },
+  {
+    index: "03",
+    value: "★ G",
+    label: "Google recognised",
+    sub: "#WeArePlay program featured developer",
+  },
+];
+
+const StatCard = ({ stat, wide }: { stat: typeof stats[0]; wide?: boolean }) => (
+  <div className={`group relative p-5 border border-[var(--ds-border)] bg-[var(--ds-surface)] overflow-hidden transition-colors duration-300 hover:bg-[#161616]${wide ? " col-span-2" : ""}`}>
+    <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[var(--ds-accent)] scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300" />
+    <span className="font-mono-ds text-[10px] text-[var(--ds-text-dim)] tracking-widest block mb-3">
+      {stat.index}
+    </span>
+    <div className="font-display text-4xl lg:text-5xl text-[var(--ds-text)] leading-none mb-2">
+      {stat.value}
+    </div>
+    <div className="font-body font-semibold text-sm text-[var(--ds-text)] mb-1">
+      {stat.label}
+    </div>
+    <div className="font-mono-ds text-[10px] text-[var(--ds-text-dim)] leading-relaxed">
+      {stat.sub}
+    </div>
+  </div>
+);
+
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-background">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Mobile development workspace" 
-          className="w-full h-full object-cover opacity-5"
-        />
-        <div className="absolute inset-0 bg-background/1" />
-      </div>
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="flex justify-center items-center min-h-[80vh]">
-          {/* Content */}
-          <div className="max-w-2xl space-y-8 animate-slide-up flex flex-col items-center text-center">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center bg-[var(--ds-bg)] overflow-hidden"
+    >
+      <div className="container mx-auto px-6 py-32 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-            <img 
-              src={profileImage} 
-              alt="Joel Ovienloba" 
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 shadow-glow object-cover animate-fade-in-scale"
-            />
-
-                {/* Main Heading */}
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                Joel Ovienloba
-              </h1>
+          {/* ── Left column ── */}
+          <div className="space-y-8">
+            {/* Role tag */}
+            <div className="flex items-center gap-3">
+              <span className="font-mono-ds text-[var(--ds-text-dim)] text-xs uppercase tracking-widest">
+                Senior Mobile Engineer
+              </span>
             </div>
-            
-            {/* Description */}
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-               Senior Mobile Engineer with 4+ years of experience creating high-performant mobile applications. Expertise in Flutter, iOS, and Android development with a proven track record of delivering complex projects on time and exceptional quality.
+
+            {/* Name */}
+            <h1 className="font-display text-6xl lg:text-7xl xl:text-8xl leading-[0.95] text-[var(--ds-text)]">
+              Joel<br />
+              <span className="italic">Ovienloba</span>
+            </h1>
+
+            {/* Mono subtitle */}
+            <p className="font-mono-ds text-sm text-[var(--ds-text-mid)] tracking-wide">
+              Flutter · iOS · Android · Cross-platform
             </p>
-        
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="transition-smooth"
-                onClick={() => scrollToSection('projects')}
-              >
-                View My Work
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="transition-smooth"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/Joel-Ovienloba-Resume.pdf';
-                  link.download = 'Joel-Ovienloba-Resume.pdf';
-                  link.click();
+
+            {/* Bio */}
+            <p className="font-body text-[var(--ds-text-mid)] leading-relaxed max-w-md text-base">
+              I architect cross-platform mobile experiences that move money across borders from blank canvas to thousands of global users. I obsess over clean architecture, pixel-sharp UI, and code that the next engineer will actually enjoy reading. Currently leading mobile at Radius Inc. (fka. Pay4Me App), making international payments feel effortless for students worldwide.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-6 pt-2">
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="font-body font-semibold text-sm px-6 py-3 bg-[var(--ds-accent)] text-[var(--ds-bg)] transition-all duration-200 hover:brightness-110"
+                style={{
+                  clipPath: "polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))",
                 }}
               >
-                <Download className="mr-2 h-5 w-5" />
+                View My Work
+              </button>
+
+              <button
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/Joel-Ovienloba-Resume.pdf";
+                  link.download = "Joel-Ovienloba-Resume.pdf";
+                  link.click();
+                }}
+                className="font-mono-ds text-xs text-[var(--ds-text-dim)] hover:text-[var(--ds-text)] transition-colors duration-200 flex items-center gap-1.5 group"
+              >
+                <Download className="h-3.5 w-3.5" />
                 Download Resume
-              </Button>
-            </div>
-            
-            {/* Social Links */}
-            <div className="flex gap-4 pt-4 justify-center">
-              <a 
-                href="https://www.linkedin.com/in/ovienloba-joel" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-primary transition-smooth"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a 
-                href="https://github.com/joelovienloba" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-primary transition-smooth"
-                aria-label="GitHub"
-              >
-                <Github className="h-6 w-6" />
-              </a>
-              <a 
-                href="mailto:jovienloba1@gmail.com" 
-                className="p-2 text-muted-foreground hover:text-primary transition-smooth"
-                aria-label="Email"
-              >
-                <Mail className="h-6 w-6" />
-              </a>
+                <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </button>
             </div>
           </div>
 
+          {/* ── Right column — stats grid ── */}
+          <div className="grid grid-cols-2 gap-3">
+            {stats.map((stat, i) => (
+              <StatCard key={stat.index} stat={stat} wide={i === stats.length - 1 && stats.length % 2 !== 0} />
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <button 
-          onClick={() => scrollToSection('about')}
-          className="p-2 rounded-full border border-primary/30 hover:border-primary transition-smooth"
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <button
+          onClick={() => scrollToSection("about")}
+          className="p-2 border border-[var(--ds-border)] hover:border-[var(--ds-accent)] transition-colors duration-200"
           aria-label="Scroll to about section"
         >
-          <ArrowDown className="h-5 w-5 text-primary" />
+          <ArrowDown className="h-4 w-4 text-[var(--ds-text-mid)]" />
         </button>
       </div>
     </section>

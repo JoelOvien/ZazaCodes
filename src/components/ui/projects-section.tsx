@@ -1,148 +1,143 @@
-import pay4me from "@/assets/pay4me.svg";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Download, ExternalLink, Play } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-
-const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "Pay4Me App",
-      description: "Cross-border payment application built with Flutter, featuring secure transactions, KYC verification, and document uploads. Led the mobile team through complete development lifecycle.",
-      image: pay4me,
-      tech: ["Flutter", "Dart", "Firebase", "GitHub Actions"],
-      links: {
-        playStore: "https://play.google.com/store/apps/details?id=app.pay4me.app",
-        appStore: "https://apps.apple.com/ng/app/pay4me-app/id1627285676?see-all=reviews"
-      },
+const projects = [
+  {
+    index: "01",
+    title: "Pay4Me App",
+    description: "Cross-border payment application built with Flutter, featuring secure transactions, KYC verification, and document uploads. Led the mobile team through the complete development lifecycle.",
+    tech: ["Flutter", "Dart", "Firebase", "GitHub Actions"],
+    links: {
+      playStore: "https://play.google.com/store/apps/details?id=app.pay4me.app",
+      appStore: "https://apps.apple.com/ng/app/pay4me-app/id1627285676?see-all=reviews",
     },
-    {
-      title: "TravelTube Mobile",
-      description: "Social travel platform connecting foodies and travelers worldwide, built with Flutter. Features real-time chat, location services, and social interactions.",
-      image: "/placeholder.svg",
-      tech: ["Flutter", "Dart", "Pusher", "Sentry"],
-      links: {
-        playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tclubmobile",
-        appStore: "https://apps.apple.com/us/app/traveltube/id1580895770"
-      },
+  },
+  {
+    index: "02",
+    title: "TravelTube Mobile",
+    description: "Social travel platform connecting foodies and travelers worldwide. Features real-time chat, location services, and social interactions.",
+    tech: ["Flutter", "Dart", "Pusher", "Sentry"],
+    links: {
+      playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tclubmobile",
+      appStore: "https://apps.apple.com/us/app/traveltube/id1580895770",
     },
-    {
-      title: "Tcourier Delivery App",
-      description: "On-demand delivery service connecting drivers with restaurants and customers. Built with Flutter for real-time order tracking and management.",
-      image: "/placeholder.svg",
-      tech: ["Flutter", "Dart", "Real-time APIs", "Maps Integration"],
-      links: {
-        playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tcourier"
-      }
+  },
+  {
+    index: "03",
+    title: "Tcourier Delivery App",
+    description: "On-demand delivery service connecting drivers with restaurants and customers, with real-time order tracking and management.",
+    tech: ["Flutter", "Dart", "Real-time APIs", "Maps Integration"],
+    links: {
+      playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tcourier",
     },
-    {
-      title: "Partner Central App",
-      description: "Restaurant management application for order processing, inventory management, and analytics. Built to streamline restaurant operations.",
-      image: "/placeholder.svg",
-      tech: ["Flutter", "Dart", "Firebase", "Analytics"],
-      links: {
-        playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tcourierorders"
-      }
-    }
-  ];
+  },
+  {
+    index: "04",
+    title: "Partner Central App",
+    description: "Restaurant management application for order processing, inventory management, and analytics — built to streamline restaurant operations.",
+    tech: ["Flutter", "Dart", "Firebase", "Analytics"],
+    links: {
+      playStore: "https://play.google.com/store/apps/details?id=com.traveltube.tcourierorders",
+    },
+  },
+];
 
-  return (
-    <section id="projects" className="py-20 bg-muted/20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">
-              Featured Projects
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Apps That Make a Difference
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A showcase of mobile applications I've built, each solving real-world problems 
-              and delivering exceptional user experiences to millions of users.
-            </p>
-          </div>
+const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
+  <div className="group relative flex flex-col p-6 border border-[var(--ds-border)] bg-[var(--ds-bg)] overflow-hidden transition-colors duration-300 hover:bg-[var(--ds-surface)] h-full">
+    {/* Accent stripe */}
+    <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[var(--ds-accent)] scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300" />
 
-          {/* Projects Grid */}
-          <div className="space-y-8">
-            {projects.map((project, index) => (
-              <Card 
-                key={index} 
-                className={`bg-card hover-lift transition-smooth`}
-              >
-                <CardContent className="p-0">
-                  <div className={`grid md:grid-cols-3 gap-0`}>
-                    {/* Project Image */}
-                   <div className="w-[312px] h-[312px] bg-white flex items-center justify-center">
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
+    {/* Index + title */}
+    <div className="mb-4">
+      <span className="font-mono-ds text-[10px] text-[var(--ds-text-dim)] tracking-widest block mb-2">
+        {project.index}
+      </span>
+      <h3 className="font-mono-ds text-2xl text-[var(--ds-text)] leading-tight">
+        {project.title}
+      </h3>
+    </div>
 
-                    {/* Project Content */}
-                    <div className={`p-6 md:col-span-2`}>
+    {/* Description */}
+    <p className="font-body text-sm text-[var(--ds-text-mid)] leading-relaxed mb-6 flex-1">
+      {project.description}
+    </p>
 
+    {/* Tech tags */}
+    <div className="flex flex-wrap gap-2 mb-6">
+      {project.tech.map((tech, i) => (
+        <span
+          key={i}
+          className="font-mono-ds text-[10px] tracking-wide px-2 py-1 border border-[var(--ds-border)] text-[var(--ds-text-dim)]"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
 
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
-                        {project.description}
-                      </p>
+    {/* Links */}
+    <div className="flex flex-wrap gap-4">
+      {project.links.playStore && (
+        <a
+          href={project.links.playStore}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono-ds text-[11px] uppercase tracking-widest text-[var(--ds-text-dim)] hover:text-[var(--ds-text)] transition-colors duration-200 flex items-center gap-1 group/link"
+        >
+          Play Store <ArrowUpRight className="h-3 w-3 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+        </a>
+      )}
+      {project.links.appStore && (
+        <a
+          href={project.links.appStore}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono-ds text-[11px] uppercase tracking-widest text-[var(--ds-text-dim)] hover:text-[var(--ds-text)] transition-colors duration-200 flex items-center gap-1 group/link"
+        >
+          App Store <ArrowUpRight className="h-3 w-3 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+        </a>
+      )}
+    </div>
+  </div>
+);
 
-                      {/* Tech Stack */}
-                      <div className="mb-6">
-                        <h4 className="font-semibold mb-3">Tech Stack</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tech.map((tech, techIndex) => (
-                            <Badge key={techIndex} variant="secondary">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
+const ProjectsSection = () => (
+  <section id="projects" className="py-20 bg-[var(--ds-surface)]">
+    <div className="container mx-auto px-6">
+      <div className="max-w-6xl mx-auto">
 
-                      {/* Action Buttons */}
-                      <div className="flex flex-wrap gap-3">
-                        {project.links.appStore && (
-                          <Button size="sm" className="hover:shadow-glow transition-smooth">
-                            <Play className="h-4 w-4 mr-2" />
-                            Play Store
-                          </Button>
-                        )}
-                        {project.links.playStore && (
-                          <Button size="sm" variant="outline">
-                            <Download className="h-4 w-4 mr-2" />
-                            App Store
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-16">
-            <p className="text-muted-foreground mb-6">
-              Interested in seeing more of my work or discussing a project?
-            </p>
-            <Button 
-              size="lg" 
-              className="hover:shadow-glow transition-smooth"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Let's Work Together
-              <ExternalLink className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
+        {/* Header */}
+        <div className="mb-16">
+          <span className="font-mono-ds text-[10px] uppercase tracking-widest text-[var(--ds-text-dim)] block mb-4">
+            // Featured Projects
+          </span>
+          <h2 className="font-body font-bold text-4xl md:text-5xl text-[var(--ds-text)]">
+            Apps That Make a Difference
+          </h2>
         </div>
+
+        {/* Project grid — 2 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--ds-border)]">
+          {projects.map((project) => (
+            <ProjectCard key={project.index} project={project} />
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 pt-8 border-t border-[var(--ds-border)] flex items-center justify-between flex-wrap gap-4">
+          <p className="font-mono-ds text-[11px] text-[var(--ds-text-dim)] uppercase tracking-widest">
+            Interested in discussing a project?
+          </p>
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="font-mono-ds text-[11px] uppercase tracking-widest text-[var(--ds-text-dim)] hover:text-[var(--ds-text)] transition-colors duration-200 flex items-center gap-1.5 group"
+          >
+            Let's Work Together
+            <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </button>
+        </div>
+
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default ProjectsSection;
