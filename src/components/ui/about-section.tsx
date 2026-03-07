@@ -1,9 +1,9 @@
 const highlights = [
-  "Built the Pay4Me mobile app from the ground up — now serving 100,000+ users across 12 countries, processing over $9M in transactions",
+  "Built the Pay4Me mobile app from the ground up, now serving 100,000+ users across 12 countries, processing over $9M in transactions",
   "Promoted from Mobile Engineer to Senior Mobile Engineer & Mobile Team Lead within months of joining",
   "Key technical contributor during Techstars Chicago '22 accelerator powered by J.P. Morgan",
   "App featured in Google's #WeArePlay campaign and on NASDAQ's MarketSite tower in Times Square",
-  "Speaker at OSCAFest 2025 — Africa's largest open-source tech festival — on scalable AI-powered Flutter architecture",
+  "Speaker at OSCAFest 2025 — Africa's largest open-source tech festival; on scalable AI-powered Flutter architecture",
 ];
 
 const AboutSection = () => (
