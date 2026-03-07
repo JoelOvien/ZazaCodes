@@ -45,8 +45,8 @@ const SkillsSection = () => (
             >
               <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[var(--ds-accent)] scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300" />
               <div className="flex items-center gap-3 mb-4">
-                <category.icon className="h-4 w-4 text-[var(--ds-text-mid)]" />
-                <span className="font-mono-ds text-[11px] uppercase tracking-widest text-[var(--ds-text-mid)]">
+                <category.icon className="h-5 w-5 text-[var(--ds-accent)]" />
+                <span className="font-mono-ds text-xs font-semibold uppercase tracking-widest text-[var(--ds-text)]">
                   {category.title}
                 </span>
               </div>
@@ -54,7 +54,7 @@ const SkillsSection = () => (
                 {category.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="font-mono-ds text-[10px] tracking-wide px-2 py-1 border border-[var(--ds-border)] text-[var(--ds-text-dim)] hover:border-[var(--ds-accent)] hover:text-[var(--ds-text)] transition-colors duration-200 cursor-default"
+                    className="font-mono-ds text-xs tracking-wide px-2.5 py-1.5 border border-[var(--ds-border)] text-[var(--ds-text-mid)] hover:border-[var(--ds-accent)] hover:text-[var(--ds-text)] transition-colors duration-200 cursor-default"
                   >
                     {skill}
                   </span>
@@ -66,17 +66,17 @@ const SkillsSection = () => (
 
         {/* Core proficiencies */}
         <div>
-          <span className="font-mono-ds text-[10px] uppercase tracking-widest text-[var(--ds-text-dim)] block mb-6">
+          <span className="font-mono-ds text-xs font-semibold uppercase tracking-widest text-[var(--ds-text)] block mb-6">
             Core Proficiencies
           </span>
           <div className="flex flex-wrap gap-2">
             {topSkills.map((skill, index) => (
               <span
                 key={index}
-                className={`font-mono-ds text-[11px] tracking-wide px-3 py-1.5 border transition-colors duration-200 cursor-default hover:bg-[var(--ds-accent)]/10 ${
+                className={`font-mono-ds text-xs tracking-wide px-3 py-1.5 border transition-colors duration-200 cursor-default hover:bg-[var(--ds-accent)]/10 ${
                   skill.primary
-                    ? "border-[var(--ds-accent)] text-[var(--ds-accent)]"
-                    : "border-[var(--ds-border)] text-[var(--ds-text-dim)] hover:border-[var(--ds-accent)] hover:text-[var(--ds-text)]"
+                    ? "border-[var(--ds-accent)] text-[var(--ds-accent)] font-semibold"
+                    : "border-[var(--ds-border)] text-[var(--ds-text-mid)] hover:border-[var(--ds-accent)] hover:text-[var(--ds-text)]"
                 }`}
               >
                 {skill.name}

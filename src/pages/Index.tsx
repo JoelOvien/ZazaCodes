@@ -21,17 +21,17 @@ const tickerItems = [
 ];
 
 const RecognitionStrip = () => (
-  <div className="relative border-y border-[var(--ds-border)] bg-[var(--ds-surface)] overflow-hidden py-3">
+  <div className="relative border-y border-[var(--ds-border)] bg-[var(--ds-surface)] overflow-hidden py-4">
     <div className="flex items-center">
-      <span className="font-mono-ds text-[10px] uppercase tracking-widest text-[var(--ds-text-dim)] px-6 border-r border-[var(--ds-border)] shrink-0 z-10 bg-[var(--ds-surface)]">
+      <span className="font-mono-ds text-xs font-semibold uppercase tracking-widest text-[var(--ds-accent)] px-6 border-r border-[var(--ds-border)] shrink-0 z-10 bg-[var(--ds-surface)]">
         Recognition
       </span>
       <div className="overflow-hidden flex-1">
         <div className="flex animate-ticker whitespace-nowrap">
           {[...tickerItems, ...tickerItems].map((item, i) => (
-            <span key={i} className="font-mono-ds text-[11px] text-[var(--ds-text-mid)] px-6 shrink-0">
+            <span key={i} className="font-mono-ds text-sm font-medium text-[var(--ds-text)] px-6 shrink-0">
               {item}
-              <span className="ml-6 text-[var(--ds-border)]">·</span>
+              <span className="ml-6 text-[var(--ds-accent)]">·</span>
             </span>
           ))}
         </div>
