@@ -1,3 +1,4 @@
+import profileImg from "@/assets/joel-profile.jpg";
 import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 
 const stats = [
@@ -67,11 +68,18 @@ const HeroSection = () => {
               </span>
             </div>
 
-            {/* Name */}
-            <h1 className="font-display text-6xl lg:text-7xl xl:text-8xl leading-[0.95] text-[var(--ds-text)]">
-              Joel<br />
-              <span className="italic">Ovienloba</span>
-            </h1>
+            {/* Name + Avatar */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+              <img
+                src={profileImg}
+                alt="Joel Ovienloba"
+                className="w-24 h-24 lg:w-[130px] lg:h-[130px] rounded-full object-cover border-2 border-[var(--ds-accent)] shrink-0"
+              />
+              <h1 className="font-display text-6xl lg:text-7xl xl:text-8xl leading-[0.95] text-[var(--ds-text)]">
+                Joel<br />
+                <span className="italic">Ovienloba</span>
+              </h1>
+            </div>
 
             {/* Mono subtitle */}
             <p className="font-mono-ds text-sm text-[var(--ds-text-mid)] tracking-wide">
